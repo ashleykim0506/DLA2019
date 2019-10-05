@@ -3,6 +3,8 @@ Name: Ashley Kim
 Email: ashleykim0506@gmail.com
 Supervisor: Virginia Ferguson
 
+
+
 ## Problem Statement and Research Objective
 
 The study of osteocytes, bone cells residing within a lacuna or a hollow space within the bone, has long been oppressed. In his paper published in 1977, Partfitt argued that the role of osteocytes is minimal compared to other bone cells (i.e. osteoblasts and osteoclasts) [1]. 
@@ -17,9 +19,13 @@ In the course of this year, I will develop the preliminary basis for novel tool 
 The scripts will be implemented as a Dragonfly plug-in so it can be used by the community.
 
 
+
+
 ## Technical Background
 
 I have always been interested in machine learning and artificial intelligence algorithms. Last semester, I took AI and discovered that I was interested in AI. I am continuing my passion in Machine Learning by being involved in several ML projects and course this semester. In Senior Capstone course, I am leading a team where they are reducing disposables of Trima, an automated blood collection device, by detecting features that give a higher than average alarm rate using applying machine learning algorithms.
+
+
 
 
 ## Methodology
@@ -27,11 +33,15 @@ I have always been interested in machine learning and artificial intelligence al
 A prototype of the program trained with training sets will be initially created using the K-Nearest Neighbor technique. KNN is widely used for image recognition. As the grayscale values of TIFF images can be easily turned list of numerical values using python libraries, KNN algorithm using euclidean distance as the measurement. Since the time and space complexity of naive KNN is O(nd), where n is the number of samples in the training set and d is the dimensionality of the features, as n grows, the software may be computationally expensive. To prevent the problem, pre-processing of the data, such as sorting, or converting the dataset into a more computationally efficient data structure, such as tree, may be applied. 
 
 
+
+
 ## Facilities, equipment or other requirement
 1. As Dragonfly software requires high spec desktop, a desktop that can support Dragonfly needs to be provided.
 2. Advice from the faculty in the computer science department.
 3. Access to academic papers such as PubMed.
 4. Use of python libraries such as numpy, scikit-learn, and matplotlib
+
+
 
 
 ## Citation
@@ -43,6 +53,8 @@ A prototype of the program trained with training sets will be initially created 
 [4] Schaffler, M. B., Cheung, W.-Y., Majeska, R., & Kennedy, O. (2013). Osteocytes: Master Orchestrators of Bone. Calcified Tissue International, 94(1), 5–24. doi: 10.1007/s00223-013-9790-y
 
 [5] Gerbaix, M., Gnyubkin, V., Farlay, D., Olivier, C., Ammann, P., Courbon, G., … Vico, L. (2017). Erratum: One-month spaceflight compromises the bone microstructure, tissue-level mechanical properties, osteocyte survival and lacunae volume in mature mice skeletons. Scientific Reports, 7(1). doi: 10.1038/s41598-017-09608-0
+
+
 
 
 ## Timeline
