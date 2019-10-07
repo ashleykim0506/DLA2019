@@ -17,17 +17,8 @@ def Read_Tiff():
 	#and value is the matrix of the image
 	return dataset
 
-def exactMatch(dataDict, targetFile='0937.tiff'):
-	targetI = plt.imread(path+targetFile, format='grayscale')
-
-	#O(n)a
-	for key in dataDict:
-		if(np.array_equal(dataDict[key], targetI)):
-			return key
-
 def main():
 	dataDict = Read_Tiff()
-	assert('0937.tiff'==exactMatch(dataDict))
 
 
 main()
