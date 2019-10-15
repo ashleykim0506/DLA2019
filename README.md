@@ -50,6 +50,7 @@ A prototype of the program trained with training sets will be initially created 
 [2] Corinne E. Metzger and S.Anand Narayanan. 2019. The Role of Osteocytes in Inflammatory Bone Loss. Frontiers in Endocrinology 10 (2019). DOI:http://dx.doi.org/10.3389/fendo.2019.00285
 
 [3] Wysolmerski, J. J. (2013). Osteocytes remove and replace perilacunar mineral during reproductive cycles. Bone, 54(2), 230–236. doi: 10.1016/j.bone.2013.01.025
+
 [4] Schaffler, M. B., Cheung, W.-Y., Majeska, R., & Kennedy, O. (2013). Osteocytes: Master Orchestrators of Bone. Calcified Tissue International, 94(1), 5–24. doi: 10.1007/s00223-013-9790-y
 
 [5] Gerbaix, M., Gnyubkin, V., Farlay, D., Olivier, C., Ammann, P., Courbon, G., … Vico, L. (2017). Erratum: One-month spaceflight compromises the bone microstructure, tissue-level mechanical properties, osteocyte survival and lacunae volume in mature mice skeletons. Scientific Reports, 7(1). doi: 10.1038/s41598-017-09608-0
