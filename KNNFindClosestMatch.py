@@ -1,4 +1,4 @@
-""" Title: GraphicsDrawer source code
+""" Title: KNN Algorithm implementation in Python
 Author: Nazanin1369
 Date: 2017
 Availability: https://github.com/Nazanin1369/DataMining-KNN/blob/master/main.py """
