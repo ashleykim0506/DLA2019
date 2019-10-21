@@ -9,7 +9,7 @@ def getClosestMatch(dataDict, targetFile):
 	try:
 		targetI = plt.imread('dataset/'+targetFile, format='grayscale')
 	except:
-		print("the name of the file does not exist in the dataset.\n")
+		print("the file does not exist in the dataset.\n")
 		return -1
 
 	matchStatus = []
