@@ -3,11 +3,17 @@ import matplotlib.pyplot as plt
 from TIFF_reader import Read_Tiff
 import time
 
-path = 'datatest/'
+#path = 'dataset/'
+#pathTarget = 'dataset/'
+#path = '8bitdatatest/'
+#pathTarget = '8bitdataset/'
+
+path = 'binary8bitdatatest/'
+pathTarget = 'binary8bitdataset/'
 
 def getClosestMatch(dataDict, targetFile):
 	try:
-		targetI = plt.imread('dataset/'+targetFile, format='grayscale')
+		targetI = plt.imread(pathTarget+targetFile, format='grayscale')
 	except:
 		print("the file does not exist in the dataset.\n")
 		return -1
@@ -22,6 +28,7 @@ def getClosestMatch(dataDict, targetFile):
 			#find the euclidean distance between 2 matrices
 			euclidean_dist = np.linalg.norm(row_test-row_target)
 			similarity += 1 / (1 + euclidean_dist)
+
 		similarity_avg = similarity/num_row
 		matchStatus.append((key, similarity_avg))
 
@@ -32,13 +39,20 @@ def main():
 	start = time.time()
 
 	targetFile = input("please enter the name of the target file. (ex. 0932.tiff)\n")
+	k = input("please enter the number of closest matched images you would like. \n")
+
+	while(int(k) > num_file):
+		print("please select a smaller k. \n")
+		k = input("please enter the number of closest matched images you would like. \n")
+
 	result = getClosestMatch(dataDict, targetFile)
 	end = time.time()
 
 	result = sorted(result, reverse= True, key=lambda x: x[1])
 	print(result)
+	result = result[:int(k)]
 
-	print('Closest match is:', result[0][0], "with", round(100*result[0][1],3), "% match.",  'Found in', round(end-start,3), 'seconds.')
+	print('Closest match is:', result[0][0], "with", round(100*result[0][1],3), "% match and .", 'Found in', round(end-start,3), 'seconds.')
 	
 
 main()
