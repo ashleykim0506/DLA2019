@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from TIFF_reader import Read_Tiff
 import time
+from operator import itemgetter
 
 #path = 'dataset/'
 #pathTarget = 'dataset/'
@@ -30,7 +31,7 @@ def getClosestMatch(dataDict, targetFile):
 			similarity += 1 / (1 + euclidean_dist)
 
 		similarity_avg = similarity/num_row
-		matchStatus.append((key, similarity_avg))
+		matchStatus.append((key, round(100*similarity_avg),3))
 
 	return matchStatus
  
@@ -49,10 +50,10 @@ def main():
 	end = time.time()
 
 	result = sorted(result, reverse= True, key=lambda x: x[1])
-	print(result)
+	#print(result)
 	result = result[:int(k)]
 
-	print('Closest match is:', result[0][0], "with", round(100*result[0][1],3), "% match and .", 'Found in', round(end-start,3), 'seconds.')
+	print('Closest matches are:', list(map(itemgetter(0), result)) , "with", list(map(itemgetter(1), result)), "% match and .", 'Found in', round(end-start,3), 'seconds.')
 	
 
 main()
