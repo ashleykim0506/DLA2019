@@ -53,7 +53,7 @@ def main():
 	#print(result)
 	result = result[:int(k)]
 
-	print('Closest matches are:', list(map(itemgetter(0), result)) , "with", list(map(itemgetter(1), result)), "% match and .", 'Found in', round(end-start,3), 'seconds.')
+	print('Closest matches are:', list(map(itemgetter(0), result)) , "with", list(map(itemgetter(1), result)), "% match. Found in", round(end-start,3), "seconds.")
 	
 
 main()
