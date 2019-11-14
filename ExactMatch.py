@@ -3,9 +3,10 @@ import matplotlib.pyplot as plt
 from TIFF_reader import Read_Tiff
 import time
 
-#path = 'dataset/'
-#path = '8bitdataset/'
-path = 'binary8bitdataset'
+#path = 'playData/dataset/'
+#path = 'playData/8bitdataset/'
+#path = 'playData/binary8bitdataset/'
+path = 'playData/otsu8bitbinarydata/'
 
 def getExactMatch(dataDict, targetFile):
 	try:

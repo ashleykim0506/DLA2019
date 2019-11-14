@@ -3,7 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
-path = 'dataset/'
+#path = 'playData/dataset/'
+#path = 'playData/8bitdataset/'
+path = 'playData/binary8bitdataset/'
+#path = 'playData/otsu8bitbinarydata/'
 
 def Read_Tiff(path):
 	dataset = {}

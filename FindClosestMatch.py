@@ -4,13 +4,16 @@ from TIFF_reader import Read_Tiff
 import time
 from operator import itemgetter
 
-#path = 'dataset/'
-#pathTarget = 'dataset/'
-#path = '8bitdatatest/'
-#pathTarget = '8bitdataset/'
+#path = 'playData/dataset/'
+#pathTarget = 'playData/dataset/'
+#path = 'playData/8bitdatatest/'
+#pathTarget = 'playData/8bitdataset/'
 
-path = 'binary8bitdatatest/'
-pathTarget = 'binary8bitdataset/'
+path = 'playData/binary8bitdatatest/'
+pathTarget = 'playData/binary8bitdataset/'
+
+#path = 'playData/otsu8bitbinarytestdata/'
+#pathTarget = 'playData/otsu8bitbinarydata/'
 
 def getClosestMatch(dataDict, targetFile):
 	try:
@@ -25,13 +28,14 @@ def getClosestMatch(dataDict, targetFile):
 	for key in dataDict:
 		euclidean_dist = 0
 		similarity = 0 
+		test = 0
 		for row_test, row_target in zip(dataDict[key], targetI):
 			#find the euclidean distance between 2 matrices
 			euclidean_dist = np.linalg.norm(row_test-row_target)
 			similarity += 1 / (1 + euclidean_dist)
 
 		similarity_avg = similarity/num_row
-		matchStatus.append((key, round(100*similarity_avg),3))
+		matchStatus.append((key, round(100*similarity_avg)))
 
 	return matchStatus
  

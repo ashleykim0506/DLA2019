@@ -10,7 +10,10 @@ import time
 import math
 import operator
 
-path = 'dataset/'
+#path = 'dataset/'
+#pathTarget = 'dataset/'
+path = '8bitdatatest/'
+pathTarget = '8bitdataset/'
 
 def euclidianDistance(sample1, sample2, length):
     distance = 0
@@ -26,7 +29,8 @@ def getNeighbors(train_set, test_sample, k):
 
     for y in train_set:
         for x in y:
-            dist = euclidianDistance(test_sample, x, length)
+            #dist = euclidianDistance(test_sample, x, length)
+            dist = np.linalg.norm(test_sample-x)
             distances.append((x , dist))
 
     distances.sort(key=operator.itemgetter(1))
@@ -35,6 +39,18 @@ def getNeighbors(train_set, test_sample, k):
         neighbors.append(distances[x][0])
 
     return neighbors
+
+
+def getResponse(neighbors):
+    classVotes = {}
+    for x in range(len(neighbors)):
+        response = neighbors[x][-1]
+        if response in classVotes:
+            classVotes[response] += 1
+        else:
+            classVotes[response] = 1
+    sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
+    return sortedVotes[0][0]
 
 
 def getAccuracy(testSet, predictions):
@@ -59,11 +75,6 @@ def getClosestKNNMatch(k, test_data, train_data):
 
     return predictions
 
-    print('--> Calculating Accuracy...')
-    accuracy = getAccuracy(test_data, predicted_data)
-    print('Accuracy = ', accuracy, '%')
-
-
 
 def main():
     dataset = []
@@ -81,19 +92,22 @@ def main():
     targetFile = input("please enter the name of the target file. (ex. 0932.tiff)\n")
 
     try:
-        targetI = plt.imread('dataset/'+targetFile, format='grayscale')
+        targetI = plt.imread(pathTarget+targetFile, format='grayscale')
     except:
         print("the file does not exist in the dataset.\n")
         return -1
 
     k = input("please enter the number of closest matched images you would like. \n")
 
-    closestNeighbors = getClosestKNNMatch(k, targetI, dataset)
+    closestNeighbors = getClosestKNNMatch(int(k), targetI, dataset)
     end = time.time()
 
-    print(closestNeighbors)
+    print(k, 'closest neighbors: ', closestNeighbors, 'Found in ', round(end-start,3), 'seconds.')
 
-    print('Found in ', round(end-start,3), 'seconds.')
+    print('--> Calculating Accuracy...')
+    accuracy = getAccuracy(test_data, predicted_data)
+    print('Accuracy = ', accuracy, '%')
+
 
 
 main()
