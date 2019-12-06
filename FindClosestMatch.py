@@ -4,16 +4,10 @@ from TIFF_reader import Read_Tiff
 import time
 from operator import itemgetter
 
-#path = 'playData/dataset/'
-#pathTarget = 'playData/dataset/'
-#path = 'playData/8bitdatatest/'
-#pathTarget = 'playData/8bitdataset/'
 
-path = 'playData/binary8bitdatatest/'
-pathTarget = 'playData/binary8bitdataset/'
+path = 'playData/fullProcessedData/'
+pathTarget = 'playData/fullProcessedEvenData/'
 
-#path = 'playData/otsu8bitbinarytestdata/'
-#pathTarget = 'playData/otsu8bitbinarydata/'
 
 def getClosestMatch(dataDict, targetFile):
 	try:
