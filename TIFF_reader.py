@@ -5,8 +5,9 @@ import time
 
 #path = 'playData/dataset/'
 #path = 'playData/8bitdataset/'
-path = 'playData/binary8bitdataset/'
+#path = 'playData/binary8bitdataset/'
 #path = 'playData/otsu8bitbinarydata/'
+path = 'playData/fullProcessedData/'
 
 def Read_Tiff(path):
 	dataset = {}

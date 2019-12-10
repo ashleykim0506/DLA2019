@@ -20,9 +20,9 @@ def getExactMatch(dataDict, targetFile):
 
 def main():
 	dataDict, num_file = Read_Tiff(path)
-	start = time.time()
 
 	targetFile = input("please enter the name of the target file. (ex. 0932.tiff)\n")
+	start = time.time()
 	key = getExactMatch(dataDict, targetFile)
 
 	end = time.time()
